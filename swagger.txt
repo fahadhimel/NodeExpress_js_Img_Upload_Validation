@@ -1,0 +1,120 @@
+
+
+
+/**
+ * @swagger
+ * /user:
+ *   get:
+ *     summary: All Data.
+ *     responses:
+ *       '200':
+ *         description: Returns an object of persons.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               items:
+ *                 $ref: '#/components/schemas/Person'
+ */
+
+/**
+ * @swagger
+ * /user:
+ *   post:
+ *     summary: post a data.
+ *     responses:
+ *       '200':
+ *         description: Returns an array of persons.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               items:
+ *                 $ref: '#/components/schemas/Person'
+ */
+
+/**
+ * @swagger
+ * /user/:id:
+ *   get:
+ *     summary: Get a single data by ID.
+ *     parameters:
+ *       - name: id
+ *         in: query
+ *         description: ID of the person.
+ *         required: true
+ *         schema:
+ *           type: integer
+ *     responses:
+ *       '200':
+ *         description: Returns a single person object.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Person'
+ */
+
+
+
+
+/**
+ * @swagger
+ * "/user/:id": {
+ *   "put": {
+ *       "tags": [
+ *           "Update-Api"
+ *       ],
+ *       "summary": "Update-user",
+ *       "description": "To updatre the particular user",
+ *       "operationId": "updateUser",
+ *       "consumes": ["application/json"],
+ *       "parameters":[
+ *           {
+ *               "name":"Id",
+ *               "in":"query",
+ *               "description":"enter the id of the user",
+ *               "required":true,
+ *               "type":"string"
+ *           },
+ *           {
+ *               "name":"body",
+ *               "in":"body",
+ *               "description":"Enter the update value",
+ *               "required":true,
+ *               "type":"string"
+ *           }
+ *       ],
+ *       "responses": {
+ *           "400": {
+ *               "description": "Invalid user supplied"
+ *           },
+ *           "404": {
+ *               "description": "User not found"
+ *           }
+ *       }
+ *   }
+ * }
+ */
+
+
+
+/**
+ * @swagger
+ * /user/:id:
+ *   delete:
+ *     summary: Delete a single data by ID.
+ *     parameters:
+ *       - name: id
+ *         in: query
+ *         description: ID of the person.
+ *         required: true
+ *         schema:
+ *           type: integer
+ *     responses:
+ *       '200':
+ *         description: Returns a single person object.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Person'
+ */
